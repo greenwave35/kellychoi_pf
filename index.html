@@ -1,60 +1,1158 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>최경희 | Python · SW교육 전문강사</title>
-<style>
-:root{--navy:#0f172a;--ink:#172033;--muted:#667085;--bg:#f7f9fc;--card:#fff;--line:#e4e7ec;--blue:#2563eb;--teal:#0f766e;--purple:#7c3aed;--orange:#ea580c;--soft:#eff6ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans KR","Apple SD Gothic Neo",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 36px));margin:0 auto}
-header{background:radial-gradient(circle at 88% 0%,rgba(20,184,166,.18),transparent 31%),linear-gradient(135deg,#0b1220 0%,#111c35 62%,#0b3f49 100%);color:white;padding:28px 0 68px}.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;font-size:14px;color:rgba(255,255,255,.86);margin-bottom:64px}.nav-links{display:flex;gap:16px;flex-wrap:wrap;font-weight:800;font-size:13px}
-.hero{display:grid;grid-template-columns:1.58fr .42fr;gap:42px;align-items:center}.eyebrow{display:inline-flex;padding:7px 12px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.09);font-weight:900;font-size:13px;margin-bottom:20px}h1{margin:0 0 18px;font-size:clamp(40px,5.6vw,70px);line-height:1.06;letter-spacing:-2.2px}.hero-title-small{display:block;font-size:clamp(26px,3vw,42px);color:rgba(255,255,255,.88);margin-bottom:8px}.subtitle{max-width:780px;margin:0;color:rgba(255,255,255,.88);font-size:19px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}.chips span{border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.10);font-weight:900;font-size:14px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 17px;border-radius:14px;font-weight:900;border:1px solid transparent}.btn.primary{background:#fff;color:#1d4ed8}.btn.ghost{border-color:rgba(255,255,255,.35);color:#fff}.profile-mini{width:245px;max-width:100%;justify-self:end;background:#fff;border-radius:28px;padding:10px;border:1px solid rgba(255,255,255,.22);box-shadow:0 22px 48px rgba(0,0,0,.22)}.profile-mini img{width:100%;display:block;border-radius:22px;aspect-ratio:4/5;object-fit:cover;object-position:center top}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-38px;position:relative;z-index:2}.metric{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 16px 34px rgba(16,24,40,.08)}.metric b{display:block;color:var(--blue);font-size:31px;line-height:1.1;margin-bottom:6px}.metric span{color:var(--muted);font-weight:800;font-size:14px}
-section{padding:70px 0}h2{margin:0 0 10px;font-size:34px;letter-spacing:-1.2px;color:#101828}.lead{margin:0 0 30px;color:var(--muted);max-width:850px;font-size:17px}.grid{display:grid;gap:18px}.cols-2{grid-template-columns:repeat(2,1fr)}.cols-3{grid-template-columns:repeat(3,1fr)}.cols-4{grid-template-columns:repeat(4,1fr)}.card{background:var(--card);border:1px solid var(--line);border-radius:23px;padding:24px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h3{margin:0 0 10px;font-size:22px;letter-spacing:-.5px;color:#111827}.card p{margin:0 0 14px;color:var(--muted)}.card ul{margin:12px 0 0;padding-left:20px}
-.topic{border-top:5px solid var(--blue);min-height:250px}.topic:nth-child(2){border-top-color:var(--orange)}.topic:nth-child(3){border-top-color:var(--teal)}.topic:nth-child(4){border-top-color:var(--purple)}.meta{display:inline-block;margin-bottom:12px;border-radius:999px;padding:5px 10px;background:var(--soft);color:#1e40af;font-weight:900;font-size:12px}.strength .card{min-height:205px}.num{width:34px;height:34px;border-radius:50%;background:#111827;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:14px}
-details{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 10px 26px rgba(16,24,40,.04)}details+details{margin-top:22px}summary{cursor:pointer;list-style:none;padding:27px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;background:linear-gradient(135deg,#fff,#f8fafc)}summary::-webkit-details-marker{display:none}summary h3{font-size:27px;margin:0 0 8px;letter-spacing:-.8px}summary p{margin:0;color:var(--muted)}.badge{white-space:nowrap;background:#111827;color:#fff;border-radius:999px;padding:8px 12px;font-weight:900;font-size:13px}.detail-body{padding:0 27px 27px}.blocks{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}.block{background:#f1f5f9;border-radius:17px;padding:16px;min-height:150px}.block b{display:block;margin-bottom:8px;color:#1e40af}.block ul{margin:0;padding-left:18px;font-size:14px}.eval{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.eval div{border:1px solid var(--line);border-radius:16px;padding:14px;font-weight:900;background:#fff}
-.exp-section{display:grid;gap:22px}.exp-group{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.exp-group h3{margin:0 0 16px;font-size:23px;color:#111827}.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.exp{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff}.exp b{display:block;margin-bottom:6px;font-size:18px;color:#111827}.exp span{font-size:14px;color:var(--muted)}.exp ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
-.book{display:flex;gap:16px}.book-cover{flex:0 0 74px;height:96px;border-radius:12px;background:linear-gradient(135deg,#1d4ed8,#0f766e);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;line-height:1.25;font-size:12px;font-weight:900}.download{display:flex;gap:12px;flex-wrap:wrap}.download a{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 18px;font-weight:900;box-shadow:0 8px 20px rgba(16,24,40,.04)}.cert-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}.cert-list li{padding:12px 14px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;font-weight:800}.notice{margin-top:18px;padding:18px;border-radius:18px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12}.contact-card{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center}.small-photo img{width:150px;height:190px;object-fit:cover;object-position:center top;border-radius:22px;display:block;border:1px solid var(--line)}footer{background:#0b1220;color:rgba(255,255,255,.76);padding:36px 0;font-size:14px}
-@media(max-width:960px){.hero,.metrics,.cols-2,.cols-3,.cols-4,.exp-grid,.contact-card{grid-template-columns:1fr}.profile-mini{justify-self:start;width:220px}.blocks{grid-template-columns:1fr}.eval{grid-template-columns:1fr}summary{grid-template-columns:1fr}.nav{display:block}.nav-links{margin-top:12px}.contact-card{display:block}.small-photo{margin-bottom:18px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="최경희 Python Programming 교육 포트폴리오. 대학·공공기관·기업 대상 Python, 기초 데이터 활용, 생성형 AI 활용, 프로젝트 기반 교육과정을 설계·운영합니다." />
+  <title>최경희 | Python Programming 교육 전문가</title>
+
+  <style>
+    :root{
+      --navy:#0f172a;
+      --ink:#182230;
+      --muted:#667085;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --line:#e4e7ec;
+      --blue:#2563eb;
+      --blue-dark:#1d4ed8;
+      --teal:#0f766e;
+      --purple:#7c3aed;
+      --orange:#ea580c;
+      --soft-blue:#eff6ff;
+      --soft-teal:#ecfdf5;
+      --soft-purple:#f5f3ff;
+      --soft-orange:#fff7ed;
+      --shadow:0 12px 34px rgba(16,24,40,.07);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.68;
+      word-break:keep-all;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    button,input,textarea{font:inherit}
+    .wrap{width:min(1160px,calc(100% - 36px));margin:0 auto}
+    .section-kicker{
+      margin:0 0 8px;
+      color:var(--blue);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    h1,h2,h3,p{margin-top:0}
+    h2{
+      margin-bottom:10px;
+      font-size:clamp(30px,4vw,40px);
+      line-height:1.2;
+      letter-spacing:-1.2px;
+      color:#101828;
+    }
+    .lead{
+      max-width:880px;
+      margin:0 0 30px;
+      color:var(--muted);
+      font-size:17px;
+    }
+    .grid{display:grid;gap:18px}
+    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    section{padding:74px 0}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 8px 24px rgba(16,24,40,.04);
+    }
+    .card h3{
+      margin-bottom:10px;
+      font-size:21px;
+      line-height:1.35;
+      letter-spacing:-.5px;
+      color:#111827;
+    }
+    .card p{margin-bottom:14px;color:var(--muted)}
+    .card ul{margin:12px 0 0;padding-left:20px}
+    .card li+li{margin-top:5px}
+
+    /* Header */
+    header{
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:
+        radial-gradient(circle at 88% 0%,rgba(45,212,191,.18),transparent 30%),
+        radial-gradient(circle at 4% 78%,rgba(37,99,235,.22),transparent 28%),
+        linear-gradient(135deg,#09111f 0%,#111c35 58%,#0c4148 100%);
+      padding:26px 0 82px;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      inset:auto -140px -180px auto;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.1);
+    }
+    .nav{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      margin-bottom:62px;
+      color:rgba(255,255,255,.88);
+      font-size:14px;
+    }
+    .brand{font-weight:900}
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:15px;
+      font-size:13px;
+      font-weight:800;
+    }
+    .nav-links a:hover{color:#fff}
+    .hero{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:minmax(0,1.5fr) minmax(220px,.5fr);
+      gap:48px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 12px;
+      margin-bottom:19px;
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      font-size:13px;
+      font-weight:900;
+    }
+    h1{
+      margin:0 0 20px;
+      font-size:clamp(41px,5.5vw,69px);
+      line-height:1.08;
+      letter-spacing:-2.2px;
+    }
+    .hero-name{
+      display:block;
+      margin-bottom:8px;
+      color:rgba(255,255,255,.88);
+      font-size:clamp(26px,3vw,40px);
+    }
+    .hero-copy{
+      max-width:790px;
+      margin-bottom:0;
+      color:rgba(255,255,255,.88);
+      font-size:19px;
+    }
+    .hero-copy strong{color:#fff}
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin:28px 0;
+    }
+    .chips span{
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.23);
+      border-radius:999px;
+      background:rgba(255,255,255,.09);
+      font-size:14px;
+      font-weight:900;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:11px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 17px;
+      border:1px solid transparent;
+      border-radius:14px;
+      font-weight:900;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:#fff;color:var(--blue-dark)}
+    .btn.ghost{border-color:rgba(255,255,255,.35);color:#fff}
+    .btn.blue{background:var(--blue);color:#fff}
+    .btn.line{border-color:var(--line);background:#fff;color:#344054}
+    .profile-mini{
+      width:255px;
+      max-width:100%;
+      justify-self:end;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:28px;
+      background:#fff;
+      box-shadow:0 24px 50px rgba(0,0,0,.24);
+    }
+    .profile-mini img{
+      display:block;
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:22px;
+    }
+
+    /* Position */
+    .position-box{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .position-main{
+      background:linear-gradient(145deg,#111827,#1f2937);
+      color:#fff;
+    }
+    .position-main h3{color:#fff;font-size:29px}
+    .position-main p{color:rgba(255,255,255,.76)}
+    .position-list{display:grid;gap:14px}
+    .position-item{
+      padding:19px 20px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+    }
+    .position-item b{
+      display:block;
+      margin-bottom:5px;
+      color:#111827;
+      font-size:17px;
+    }
+    .position-item span{color:var(--muted);font-size:14px}
+
+    /* Audience */
+    .audience-card{
+      position:relative;
+      min-height:310px;
+      overflow:hidden;
+      border-top:5px solid var(--blue);
+    }
+    .audience-card:nth-child(2){border-top-color:var(--teal)}
+    .audience-card:nth-child(3){border-top-color:var(--orange)}
+    .audience-card .tag{
+      display:inline-block;
+      margin-bottom:13px;
+      padding:5px 9px;
+      border-radius:999px;
+      background:var(--soft-blue);
+      color:#1e40af;
+      font-size:12px;
+      font-weight:900;
+    }
+    .audience-card:nth-child(2) .tag{background:var(--soft-teal);color:#065f46}
+    .audience-card:nth-child(3) .tag{background:var(--soft-orange);color:#9a3412}
+    .audience-card .audience-link{
+      display:inline-flex;
+      margin-top:14px;
+      color:var(--blue);
+      font-weight:900;
+    }
+
+    /* Strength */
+    .strength-card{min-height:215px}
+    .num{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;
+      height:34px;
+      margin-bottom:14px;
+      border-radius:50%;
+      background:#111827;
+      color:#fff;
+      font-weight:900;
+    }
+
+    /* Projects */
+    .project-card{
+      display:flex;
+      flex-direction:column;
+      min-height:315px;
+    }
+    .project-type{
+      display:inline-flex;
+      align-self:flex-start;
+      margin-bottom:13px;
+      padding:5px 9px;
+      border-radius:999px;
+      background:var(--soft-purple);
+      color:#5b21b6;
+      font-size:12px;
+      font-weight:900;
+    }
+    .project-card p{flex:1}
+    .project-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin:4px 0 16px;
+    }
+    .project-meta span{
+      padding:5px 8px;
+      border-radius:999px;
+      background:#f2f4f7;
+      color:#475467;
+      font-size:12px;
+      font-weight:800;
+    }
+    .project-actions{display:flex;flex-wrap:wrap;gap:9px}
+    .project-actions a{
+      display:inline-flex;
+      padding:9px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      color:#344054;
+      font-size:13px;
+      font-weight:900;
+    }
+    .project-actions a:first-child{
+      border-color:var(--blue);
+      background:var(--blue);
+      color:#fff;
+    }
+
+    /* Courses */
+    .course-card{
+      min-height:275px;
+      border-top:5px solid var(--blue);
+    }
+    .course-card:nth-child(2){border-top-color:var(--orange)}
+    .course-card:nth-child(3){border-top-color:var(--teal)}
+    .course-card:nth-child(4){border-top-color:var(--purple)}
+    .meta{
+      display:inline-block;
+      margin-bottom:12px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--soft-blue);
+      color:#1e40af;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    /* Experience */
+    .exp-section{display:grid;gap:22px}
+    .exp-group{
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(16,24,40,.04);
+    }
+    .exp-group h3{
+      margin:0 0 16px;
+      font-size:23px;
+      color:#111827;
+    }
+    .exp-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .exp{
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+    }
+    .exp b{
+      display:block;
+      margin-bottom:6px;
+      color:#111827;
+      font-size:17px;
+    }
+    .exp span{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .exp ul{
+      margin:8px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Curriculum */
+    .curriculum-card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:0 10px 26px rgba(16,24,40,.04);
+    }
+    .curriculum-card+.curriculum-card{margin-top:20px}
+    .curriculum-head{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:start;
+      padding:25px;
+      background:linear-gradient(135deg,#fff,#f8fafc);
+    }
+    .curriculum-head h3{margin:0 0 7px;font-size:25px}
+    .curriculum-head p{margin:0;color:var(--muted)}
+    .badge{
+      padding:7px 11px;
+      border-radius:999px;
+      background:#111827;
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .detail-body{padding:0 25px 25px}
+    .blocks{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:11px;
+      margin-bottom:16px;
+    }
+    .block{
+      min-height:145px;
+      padding:15px;
+      border-radius:16px;
+      background:#f1f5f9;
+    }
+    .block b{
+      display:block;
+      margin-bottom:7px;
+      color:#1e40af;
+    }
+    .block ul{
+      margin:0;
+      padding-left:17px;
+      font-size:14px;
+    }
+    .eval{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px;
+    }
+    .eval div{
+      padding:13px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      font-weight:900;
+    }
+
+    /* Publications / download / contact */
+    .pub-card{min-height:205px}
+    .download{
+      display:flex;
+      flex-wrap:wrap;
+      gap:11px;
+    }
+    .download a{
+      padding:14px 17px;
+      border:1px solid var(--line);
+      border-radius:15px;
+      background:#fff;
+      box-shadow:0 8px 20px rgba(16,24,40,.04);
+      font-weight:900;
+    }
+    .notice{
+      margin-top:18px;
+      padding:17px;
+      border:1px solid #fed7aa;
+      border-radius:17px;
+      background:#fff7ed;
+      color:#7c2d12;
+    }
+    .cert-list{
+      display:grid;
+      gap:9px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .cert-list li{
+      padding:11px 13px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:#f8fafc;
+      font-weight:800;
+    }
+    .contact-card{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+    .small-photo img{
+      display:block;
+      width:150px;
+      height:190px;
+      object-fit:cover;
+      object-position:center top;
+      border:1px solid var(--line);
+      border-radius:22px;
+    }
+    .contact-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:17px;
+    }
+    .contact-links a{
+      padding:10px 13px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      font-size:14px;
+      font-weight:900;
+    }
+    footer{
+      padding:35px 0;
+      background:#0b1220;
+      color:rgba(255,255,255,.72);
+      font-size:14px;
+    }
+
+    @media(max-width:980px){
+      .hero,
+      .position-box,
+      .metrics,
+      .cols-2,
+      .cols-3,
+      .cols-4,
+      .exp-grid,
+      .contact-card{
+        grid-template-columns:1fr;
+      }
+      .profile-mini{
+        justify-self:start;
+        width:220px;
+      }
+      .blocks{grid-template-columns:1fr}
+      .nav{display:block}
+      .nav-links{
+        justify-content:flex-start;
+        margin-top:13px;
+      }
+      .contact-card{display:block}
+      .small-photo{margin-bottom:18px}
+    }
+
+    @media(max-width:640px){
+      .wrap{width:min(100% - 24px,1160px)}
+      header{padding-top:20px;padding-bottom:70px}
+      .nav{margin-bottom:44px}
+      h1{letter-spacing:-1.5px}
+      .hero-copy{font-size:17px}
+      section{padding:58px 0}
+      .card,.exp-group{padding:20px}
+      .curriculum-head{grid-template-columns:1fr;padding:21px}
+      .detail-body{padding:0 21px 21px}
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="wrap"><div class="nav"><strong>최경희 | Python · SW교육 전문강사</strong><div class="nav-links"><a href="#topics">담당 가능 교과목</a><a href="#curriculum">대표 커리큘럼</a><a href="#experience">Teaching Experience</a><a href="#materials">강의자료</a><a href="#contact">Contact</a></div></div><div class="hero"><div><span class="eyebrow">정보과학 석사 · 교육과정 설계 · PBL 수업설계</span><h1><span class="hero-title-small">최경희</span>Python · SW교육 전문강사</h1><p class="subtitle">Python Programming, Generative AI Education, C Programming을 중심으로 대학 교양 SW, 비교과 특강 및 프로젝트 기반(PBL) 교육과정을 설계·운영합니다.</p><div class="chips"><span>Python Programming</span><span>C Programming</span><span>Generative AI Education</span><span>Data Analytics</span><span>Curriculum Development</span><span>PBL</span></div><div class="hero-actions"><a class="btn primary" href="#topics">담당 가능 교과목 보기</a><a class="btn ghost" href="#download">제출자료 다운로드</a></div></div><div class="profile-mini"><img src="profile.png" alt="최경희 프로필 사진"></div></div></div></header>
-<div class="wrap metrics"><div class="metric"><b>10+</b><span>강의경력</span></div><div class="metric"><b>4</b><span>대학 강의</span></div><div class="metric"><b>6</b><span>교재 집필</span></div><div class="metric"><b>PBL</b><span>프로젝트 기반 교육과정 설계</span></div></div>
-<main>
-<section id="topics"><div class="wrap"><h2>담당 가능 교과목</h2><p class="lead">학과 정규교과, 교양 SW, 비교과 프로그램으로 개설 가능한 핵심 강의 주제입니다.</p><div class="grid cols-4">
-<article class="card topic"><span class="meta">15 Weeks / Basic to Project</span><h3>Python Programming</h3><p>Python 기초 문법, 문제해결, 미니 프로젝트까지 연결하는 실습 중심 과정</p><ul><li>변수·자료형·조건문·반복문</li><li>함수·파일·예외처리</li><li>미니 프로젝트 및 발표</li></ul></article>
-<article class="card topic"><span class="meta">Programming Fundamentals</span><h3>C Programming</h3><p>C언어 입문자를 위한 문법, 배열, 함수, 콘솔 기반 실습 과정</p><ul><li>입출력·연산자</li><li>조건문·반복문</li><li>배열·함수·기초 프로젝트</li></ul></article>
-<article class="card topic"><span class="meta">AI Literacy / Practical Workflow</span><h3>Generative AI Education</h3><p>생성형 AI를 학습·보고서·코딩·발표자료 제작에 활용하는 실무형 교과</p><ul><li>프롬프트 설계</li><li>AI 기반 코드 설명·오류 분석</li><li>결과 검증과 윤리</li></ul></article>
-<article class="card topic"><span class="meta">Python + pandas + Visualization</span><h3>Data Analytics</h3><p>CSV 데이터 정리, pandas 분석, matplotlib 시각화, 공공데이터 프로젝트</p><ul><li>데이터 수집·정제</li><li>groupby·기초 통계</li><li>분석 보고서 작성</li></ul></article>
-</div></div></section>
-<section class="strength" id="strength"><div class="wrap"><h2>교육자로서의 강점</h2><p class="lead">교육과정 설계·교재 집필·프로젝트형 수업 운영</p><div class="grid cols-3">
-<div class="card"><span class="num">1</span><h3>교육과정 개발 및 운영</h3><p>Python, C, 생성형 AI, 데이터분석 교육과정을 학습자 수준에 맞춰 설계하고 운영합니다.</p></div>
-<div class="card"><span class="num">2</span><h3>비전공자 친화적 설명</h3><p>복잡한 프로그래밍 개념을 단계별 실습과 예제로 구조화하여 학습 진입장벽을 낮춥니다.</p></div>
-<div class="card"><span class="num">3</span><h3>교재·콘텐츠 개발</h3><p>출간 교재와 교육자료 개발 경험을 바탕으로 수업자료를 직접 제작하고 개선합니다.</p></div>
-<div class="card"><span class="num">4</span><h3>Project-Based Learning</h3><p>문제정의, 구현, 결과물 정리, 발표까지 이어지는 PBL형 수업을 운영합니다.</p></div>
-<div class="card"><span class="num">5</span><h3>생성형 AI 활용</h3><p>AI를 학습 보조, 코드 검토, 보고서 개선 도구로 활용하게 지도합니다.</p></div>
-<div class="card"><span class="num">6</span><h3>GitHub 기반 결과물 관리</h3><p>수업 결과물을 저장소에 정리하고 포트폴리오화하는 과정을 지도합니다.</p></div>
-</div></div></section>
-<section id="curriculum"><div class="wrap"><h2>대표 커리큘럼</h2><p class="lead">강의계획 카드: 교과목명과 학습자 수준에 맞춰 조정 가능합니다.</p>
-<details open><summary><div><h3>Python Programming</h3><p>Python 기초 문법을 익히고, 문제해결형 미니 프로젝트를 구현할 수 있다.</p></div><span class="badge">15주 정규교과</span></summary><div class="detail-body"><div class="blocks"><div class="block"><b>1~3주</b><ul><li>개발환경 구축</li><li>변수·자료형</li><li>연산자·문자열</li></ul></div><div class="block"><b>4~6주</b><ul><li>조건문</li><li>반복문</li><li>리스트 처리</li></ul></div><div class="block"><b>7~9주</b><ul><li>딕셔너리</li><li>함수 정의</li><li>실습 평가</li></ul></div><div class="block"><b>10~12주</b><ul><li>파일 입출력</li><li>예외처리</li><li>모듈 활용</li></ul></div><div class="block"><b>13~15주</b><ul><li>미니 프로젝트</li><li>발표 준비</li><li>최종 발표</li></ul></div></div><div class="eval"><div>출석 20%</div><div>과제 30%</div><div>필기평가 10%</div><div>프로젝트 30%</div><div>발표 10%</div></div></div></details>
-<details open><summary><div><h3>Generative AI Education</h3><p>생성형 AI를 활용해 학습, 코딩, 보고서, 발표자료 제작을 수행하고 결과를 검증할 수 있다.</p></div><span class="badge">교양·비교과</span></summary><div class="detail-body"><div class="blocks"><div class="block"><b>1~3주</b><ul><li>AI 개요</li><li>활용 윤리</li><li>프롬프트 기초</li></ul></div><div class="block"><b>4~6주</b><ul><li>코드 설명 요청</li><li>오류 원인 분석</li><li>문제해결 실습</li></ul></div><div class="block"><b>7~9주</b><ul><li>보고서 초안</li><li>자료 요약</li><li>발표자료 구성</li></ul></div><div class="block"><b>10~12주</b><ul><li>AI 활용 프로젝트</li><li>결과 검증</li><li>의존성 점검</li></ul></div><div class="block"><b>13~15주</b><ul><li>결과물 완성</li><li>발표</li><li>포트폴리오 제출</li></ul></div></div><div class="eval"><div>실습 40%</div><div>보고서 30%</div><div>발표 30%</div></div></div></details>
-<details open><summary><div><h3>Data Analytics</h3><p>Python과 pandas를 활용해 데이터를 정리·분석·시각화하고 해석 보고서를 작성할 수 있다.</p></div><span class="badge">Python + Data</span></summary><div class="detail-body"><div class="blocks"><div class="block"><b>1~3주</b><ul><li>환경 구축</li><li>CSV 불러오기</li><li>DataFrame 기초</li></ul></div><div class="block"><b>4~6주</b><ul><li>필터링</li><li>결측치 처리</li><li>groupby 집계</li></ul></div><div class="block"><b>7~9주</b><ul><li>기초 통계</li><li>중간 리포트</li><li>시각화 기초</li></ul></div><div class="block"><b>10~12주</b><ul><li>그래프 작성</li><li>공공데이터 선정</li><li>가설 설정</li></ul></div><div class="block"><b>13~15주</b><ul><li>분석 프로젝트</li><li>결과 해석</li><li>최종 발표</li></ul></div></div><div class="eval"><div>실습 35%</div><div>분석보고서 35%</div><div>발표 30%</div></div></div></details>
-</div></section>
-<section id="experience"><div class="wrap"><h2>Teaching Experience</h2><p class="lead">강의 이력 </p><div class="exp-section">
-<div class="exp-group"><h3>교육과정 개발 및 운영</h3><div class="exp-grid"><div class="exp"><b>마인드퍼스트코딩랩</b><span>2018 ~ 현재</span><ul><li>Python Programming 교육과정 개발 및 운영</li><li>C Programming 교육과정 운영</li><li>생성형 AI·데이터분석 교육과정 개발</li><li>PBL 기반 프로젝트 수업 설계</li></ul></div><div class="exp"><b>교재 및 콘텐츠 개발</b><span>2017 ~ 현재</span><ul><li>SW·코딩 교육 교재 6종 집필</li><li>수업자료 및 실습과제 개발</li></ul></div><div class="exp"><b>프로젝트형 수업 운영</b><span>PBL · GitHub · 발표</span><ul><li>문제정의·구현·발표 중심 수업</li><li>GitHub 기반 결과물 정리</li></ul></div></div></div>
-<div class="exp-group"><h3>대학 강의 및 초청강의</h3><div class="exp-grid"><div class="exp"><b>이화여자대학교</b><span>CT & SW Coding 초청강의</span><ul><li>정규 수업 내 외부전문가 초청강의</li><li>2~3회 초청강의 진행</li></ul></div><div class="exp"><b>연세대학교</b><span>Python Programming 비교과 특강</span><ul><li>Python 기초 프로그래밍</li><li>실습 중심 교육</li></ul></div><div class="exp"><b>홍익대학교</b><span>Python Programming 비교과 특강</span><ul><li>Python 기초 및 문제해결</li></ul></div><div class="exp"><b>서일대학교</b><span>Python Programming 비교과 특강</span><ul><li>Python 프로그래밍 기초</li></ul></div></div></div>
-<div class="exp-group"><h3>공공기관 · 기업 교육</h3><div class="exp-grid"><div class="exp"><b>한국생산성본부</b><span>SW지도강사 / Python</span></div><div class="exp"><b>용인시디지털산업진흥원</b><span>SW교육 및 강사양성과정</span></div><div class="exp"><b>강원콘텐츠코리아랩</b><span>SW·콘텐츠 교육</span></div><div class="exp"><b>안랩샘 아카데미</b><span>SW교육 과정 강의</span></div></div></div>
-</div></div></section>
-<section id="publications"><div class="wrap"><h2>저서 및 교육콘텐츠</h2><p class="lead">시험 시행처 및 출판사 기준 대표 집필 경력</p><div class="grid cols-3">
-<div class="card"><h3>한국생산성본부(KPC)</h3><p><strong>『이기적 SW코딩자격』 수험서 4권 집필</strong></p></div>
-<div class="card"><h3>한국정보통신진흥협회(KAIT)</h3><p><strong>『코딩활용능력시험』 수험서 집필</strong></p></div>
-<div class="card"><h3>영진닷컴 × 한국정보통신진흥협회(KAIT)</h3><p><strong>『이기적 파이썬마스터』</strong></p><p>Python 자격시험 대비 수험서 집필</p></div>
-</div></div></section>
-<section id="research"><div class="wrap"><h2>Research</h2><div class="card"><h3>AHP를 통한 인터넷 비즈니스 모델별 주요 수익요인에 관한 탐색적 연구</h3><p>한국경영정보학회, 2006</p></div></div></section>
-<section id="projects"><div class="wrap"><h2>프로젝트 지도 사례</h2><p class="lead">수업 설계, 구현 과정, 발표까지 이어지는 프로젝트형 지도</p><div class="grid cols-4"><div class="card"><h3>Python 추천 프로그램</h3><p>조건문·리스트·함수를 활용한 문제해결형 미니 프로젝트</p></div><div class="card"><h3>데이터분석 리포트</h3><p>CSV 정제, pandas 분석, 시각화, 결과 해석 보고서</p></div><div class="card"><h3>생성형 AI 활용</h3><p>프롬프트 설계, 코드 검토, 보고서 개선을 결합한 프로젝트</p></div><div class="card"><h3>GitHub 포트폴리오</h3><p>수업 결과물을 저장소에 정리하고 발표자료로 연결</p></div></div></div></section>
-<section id="materials"><div class="wrap"><h2>대표 강의자료</h2><p class="lead">실제 PDF 파일을 같은 저장소에 업로드하면 버튼이 연결됩니다.</p><div class="grid cols-4"><div class="card"><h3>Python 강의계획서</h3><p>15주 정규교과용</p><a href="syllabus_python.pdf">PDF 보기</a></div><div class="card"><h3>생성형 AI 강의계획서</h3><p>교양·비교과 과정</p><a href="syllabus_ai.pdf">PDF 보기</a></div><div class="card"><h3>데이터분석 강의계획서</h3><p>Python+pandas 과정</p><a href="syllabus_data.pdf">PDF 보기</a></div><div class="card"><h3>GitHub</h3><p>수업 코드 및 프로젝트</p><a href="https://github.com/greenwave35" target="_blank" rel="noopener">바로가기</a></div></div><div class="notice">PDF 파일명은 예시입니다. GitHub Pages 저장소에 같은 이름으로 업로드하면 버튼이 정상 연결됩니다.</div></div></section>
-<section id="education"><div class="wrap"><h2>학력 및 자격</h2><div class="grid cols-2"><div class="card"><h3>Education</h3><p><strong>이화여자대학교 정보과학석사</strong><br>전자상거래학 전공</p><p><strong>아주대학교 국어국문학과 학사</strong></p></div><div class="card"><h3>Certifications</h3><ul class="cert-list"><li>ICDL Professional Computing (Python)</li><li>Unity Certified Developer</li><li>직업상담사 2급</li><li>진로적성상담사</li></ul></div></div></div></section>
-<section id="download"><div class="wrap"><h2>제출자료 다운로드</h2><p class="lead">대학 강사 지원 시 제출자료 링크 영역입니다.</p><div class="download"><a href="resume_choi_kyunghee.pdf">PDF 이력서</a><a href="portfolio_choi_kyunghee.pdf">PDF 포트폴리오</a><a href="syllabus_python.pdf">Python 강의계획서</a><a href="Python_Programming_강의계획서_15주.pdf">AI 강의계획서</a><a href="syllabus_data.pdf">데이터분석 강의계획서</a></div></div></section>
-<section id="contact"><div class="wrap"><h2>Contact</h2><div class="card contact-card"><div class="small-photo"><img src="profile.png" alt="최경희 프로필 사진"></div><div><h3>최경희</h3><p>Python · C · Generative AI · Data Analytics · Project-Based Learning</p><p>Email: <a href="mailto:greenwave35@gmail.com">greenwave35@gmail.com</a></p><p>GitHub: <a href="https://github.com/greenwave35" target="_blank" rel="noopener">github.com/greenwave35</a></p></div></div></div></section>
-</main><footer><div class="wrap">© 최경희 | Python · SW교육 전문강사 Portfolio</div></footer></body></html>
+  <header>
+    <div class="wrap">
+      <nav class="nav" aria-label="주요 메뉴">
+        <strong class="brand">최경희 | Python Programming 교육 전문가</strong>
+        <div class="nav-links">
+          <a href="#about">소개</a>
+          <a href="#audience">대상별 교육</a>
+          <a href="#projects">프로젝트</a>
+          <a href="#courses">강의 분야</a>
+          <a href="#experience">강의 경력</a>
+          <a href="#publications">저서</a>
+          <a href="#download">자료</a>
+          <a href="#contact">연락처</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <span class="eyebrow">교육과정 설계 · 교재 집필 · PBL 수업설계</span>
+          <h1>
+            <span class="hero-name">최경희</span>
+            Python Programming<br />교육 전문가
+          </h1>
+          <p class="hero-copy">
+            Python 프로그래밍을 중심으로 대학·공공기관·기업의 교육과정을 설계하고,
+            프로젝트 기반(PBL) 수업을 운영합니다.
+          </p>
+
+          <div class="chips">
+            <span>Python Programming</span>
+                        <span>기초 데이터 활용</span>
+            <span>생성형 AI 활용</span>
+            <span>Project-Based Learning</span>
+            <span>GitHub 포트폴리오</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#audience">대상별 교육 보기</a>
+            <a class="btn ghost" href="#projects">프로젝트 사례 보기</a>
+          </div>
+        </div>
+
+        <div class="profile-mini">
+          <img src="profile.png" alt="최경희 프로필 사진" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <p class="section-kicker">Merits</p>
+        <h2>기본실력 다지고, 결과물로 확인</h2>
+
+
+        <div class="position-box">
+          <article class="card position-main">
+            <h3>핵심 교육역량</h3>
+            <p>
+              <strong>Python Programming 교육 전문가</strong><br />
+              Python 기초 및 심화 프로그래밍, 프로젝트형 수업, 기초 데이터 활용,
+              생성형 AI를 활용한 문서·시각화·웹 결과물 제작
+            </p>
+          </article>
+
+          <div class="position-list">
+            <div class="position-item">
+              <b>가장 강한 역량</b>
+              <span>Python 문법, 조건문·반복문·함수·자료구조를 단계적으로 설명하는 수업</span>
+            </div>
+            <div class="position-item">
+              <b>확장 가능한 수업</b>
+              <span>CSV 정리, pandas 기초, 시각화, 공공데이터를 활용한 입문 프로젝트</span>
+            </div>
+            <div class="position-item">
+              <b>차별화 요소</b>
+              <span>생성형 AI의 도움을 받아 보고서·시각화·간단한 웹 결과물을 만들고 GitHub 포트폴리오로 연결</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="wrap">
+        <p class="section-kicker">Programs by Audience</p>
+        <h2>각 분야에 쌓아온 전문성으로 제안합니다</h2>
+        <p class="lead">
+          분야별 교육경력과 커리큘럼을 확인하실 수 있습니다.
+        </p>
+
+        <div class="grid cols-3">
+          <article class="card audience-card">
+            <span class="tag">University</span>
+            <h3>대학 교육</h3>
+            <p>정규교과·교양 SW·비교과 프로그램을 위한 교육과정</p>
+            <ul>
+              <li>Python Programming 15주 과정</li>
+              <li>기초 데이터 활용 및 시각화</li>
+              <li>생성형 AI 활용 프로젝트</li>
+              <li>GitHub 기반 결과물 관리</li>
+            </ul>
+            <a class="audience-link" href="#curriculum">15주 커리큘럼 보기 →</a>
+          </article>
+
+          <article class="card audience-card">
+            <span class="tag">Public Organization</span>
+            <h3>공공기관 교육</h3>
+            <p>청소년·성인·예비강사 등 대상자의 수준과 사업 목적에 맞춘 교육</p>
+            <ul>
+              <li>Python 입문 및 디지털 역량</li>
+              <li>공공데이터 활용 기초</li>
+              <li>강사양성 및 교육 콘텐츠 제작</li>
+              <li>프로젝트 결과보고 및 발표</li>
+            </ul>
+            <a class="audience-link" href="#experience">기관 강의 경력 보기 →</a>
+          </article>
+
+          <article class="card audience-card">
+            <span class="tag">Corporate Training</span>
+            <h3>기업 교육</h3>
+            <p>비전공 실무자가 Python과 생성형 AI를 업무 결과물에 연결하는 실습형 과정</p>
+            <ul>
+              <li>Python 기초 및 데이터 정리</li>
+              <li>간단한 시각화와 보고서 작성</li>
+              <li>생성형 AI 활용 문서 개선</li>
+              <li>단기 특강·맞춤형 실습 구성</li>
+            </ul>
+            <a class="audience-link" href="#courses">강의 분야 보기 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="strength">
+      <div class="wrap">
+        <p class="section-kicker">Why Me</p>
+        <h2>교육자로서의 강점</h2>
+        <p class="lead">교육과정은 학습목표에 맞는 교수법과 평가, 산출물이 함께 설계되어야 합니다. 교육과정 설계 및 자문은 물론 교재 집필과 평가문항 개발까지 통합된 교육의 이해를 수업에 반영합니다.</p>
+
+        <div class="grid cols-3">
+          <article class="card strength-card">
+            <span class="num">1</span>
+            <h3>Python 입문 교육</h3>
+            <p>학습자가 문법의 구조를 이해하고 직접 코드를 작성하도록 단계별 실습을 설계합니다.</p>
+          </article>
+          <article class="card strength-card">
+            <span class="num">2</span>
+            <h3>교육과정 설계</h3>
+            <p>정규교과, 비교과, 단기 특강 등 시간과 대상에 맞춰 난이도와 결과물을 조정합니다.</p>
+          </article>
+          <article class="card strength-card">
+            <span class="num">3</span>
+            <h3>교재·콘텐츠 개발</h3>
+            <p>출간 교재와 수업자료 개발 경험을 바탕으로 설명, 예제, 과제를 직접 구성합니다.</p>
+          </article>
+          <article class="card strength-card">
+            <span class="num">4</span>
+            <h3>프로젝트 기반 수업</h3>
+            <p>문제정의, 구현, 결과 정리, 발표까지 이어지는 소규모 PBL을 운영합니다.</p>
+          </article>
+          <article class="card strength-card">
+            <span class="num">5</span>
+            <h3>생성형 AI 활용</h3>
+            <p>AI를 전문가 수준의 개발 도구가 아니라 코드 이해, 문서화, 시각화, 결과물 개선을 돕는 학습 도구로 활용합니다.</p>
+          </article>
+          <article class="card strength-card">
+            <span class="num">6</span>
+            <h3>포트폴리오 연결</h3>
+            <p>학습 결과물을 웹페이지와 GitHub에 정리해 학습자의 성취가 보이도록 지도합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <p class="section-kicker">Evidence</p>
+        <h2>대표 프로젝트 및 지도 사례</h2>
+        <p class="lead">
+          프로젝트 자체보다, 기초 학습자가 아이디어를 결과물로 완성하도록 지도한 과정에 초점을 둡니다.
+        </p>
+
+        <div class="grid cols-3">
+          <article class="card project-card">
+            <span class="project-type">직접 개발한 웹앱</span>
+            <h3>선택과목 추천 웹앱</h3>
+            <p>
+              입력 내용을 바탕으로 희망 전공별 선택과목을 추천해주는 앱입니다.
+              Python 기반 결과물을 웹에서 직접 사용할 수 있도록 구현·배포했습니다.
+            </p>
+            <div class="project-meta">
+              <span>Python</span><span>웹앱</span><span>GitHub Pages</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://greenwave35.github.io/eumapp/" target="_blank" rel="noopener">Live Demo</a>
+              <a href="https://github.com/greenwave35/eumapp" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <span class="project-type">학생 그룹 PBL</span>
+            <h3>학생 데이터 연구 프로젝트</h3>
+            <p>
+              고등학생들과 함께 주제를 정하고 데이터를 수집·분석한 뒤,
+              프로젝트 과정과 결과를 웹페이지로 정리한 지도 사례입니다.
+            </p>
+            <div class="project-meta">
+              <span>학생 프로젝트</span><span>데이터 활용</span><span>발표</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://greenwave35.github.io/dslab/project.html" target="_blank" rel="noopener">프로젝트 보기</a>
+              <a href="https://greenwave35.github.io/dslab/" target="_blank" rel="noopener">연구회 보기</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <span class="project-type">해외대학 진학 개인지도</span>
+            <h3>환경 융합 프로젝트 포트폴리오</h3>
+            <p>
+              해외대학 진학을 준비하는 학생의 관심사를 바탕으로
+              환경 문제 조사, 아이디어 구체화, 기술 결과물, 영문 웹 포트폴리오 제작을 지도했습니다.
+            </p>
+            <div class="project-meta">
+              <span>개인 맞춤형 PBL</span><span>융합 주제</span><span>영문 포트폴리오</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://greenwave35.wixsite.com/save2050/portfolio" target="_blank" rel="noopener">포트폴리오 보기</a>
+              <a href="https://greenwave35.wixsite.com/save2050" target="_blank" rel="noopener">프로젝트 사이트</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="wrap">
+        <p class="section-kicker">Teaching Areas</p>
+        <h2>담당 가능 강의 분야</h2>
+        <p class="lead">
+          프로그래밍 언어와 활용분야의 내용을 융합하여 프로젝트 만들기 수업을 진행합니다.
+        </p>
+
+        <div class="grid cols-4">
+          <article class="card course-card">
+            <span class="meta">Core / 15 Weeks</span>
+            <h3>Python Programming</h3>
+            <p>기초 문법에서 객체지향 개념까지 단계적으로 익히고, 문제해결과 프로젝트로 연결합니다.</p>
+            <ul>
+              <li>변수·자료형·연산자</li>
+              <li>조건문·반복문</li>
+              <li>리스트·딕셔너리·함수</li>
+              <li>클래스·모듈</li>
+              <li>파일 처리·기초 프로젝트</li>
+            </ul>
+          </article>
+
+          <article class="card course-card">
+            <span class="meta">Programming Fundamentals</span>
+            <h3>C Programming</h3>
+            <p>프로그래밍 구조를 처음 배우는 학습자를 위한 문법과 콘솔 실습 과정</p>
+            <ul>
+              <li>입출력·연산자</li>
+              <li>조건문·반복문</li>
+              <li>배열·함수</li>
+              <li>포인터·구조체</li>
+            </ul>
+          </article>
+
+          <article class="card course-card">
+            <span class="meta">Introductory Data Use</span>
+            <h3>기초 데이터 활용</h3>
+            <p>입문자도 쉽게 데이터를 정리하고 해석하며 시각화할 수 있도록 지도합니다.</p>
+            <ul>
+              <li>CSV·DataFrame 기초</li>
+              <li>필터링·groupby</li>
+              <li>기초 통계·시각화</li>
+              <li>공공데이터 미니 프로젝트</li>
+            </ul>
+          </article>
+
+          <article class="card course-card">
+            <span class="meta">Practical AI Use</span>
+            <h3>생성형 AI 활용</h3>
+            <p>생성형 AI를 활용해 학습과 업무 결과물을 개선하는 실용적 활용 과정입니다.</p>
+            <ul>
+              <li>프롬프트 기초</li>
+              <li>코드 설명·오류 점검</li>
+              <li>문서·발표자료 개선</li>
+              <li>결과 검증과 윤리</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <p class="section-kicker">Teaching Experience</p>
+        <h2>강의 및 교육 운영 경력</h2>
+        <p class="lead">대학·공공기관·민간교육·교육과정 운영 경력을 안내드립니다.</p>
+
+        <div class="exp-section">
+          <div class="exp-group">
+            <h3>대학 강의 및 초청강의</h3>
+            <div class="exp-grid">
+              <div class="exp">
+                <b>이화여자대학교</b>
+                <span>CT & SW Coding 초청강의</span>
+                <ul><li>정규 수업 내 외부전문가 초청강의</li></ul>
+              </div>
+              <div class="exp">
+                <b>연세대학교</b>
+                <span>Python Programming 비교과 특강</span>
+                <ul><li>Python 기초 및 심화 프로그래밍</li></ul>
+              </div>
+              <div class="exp">
+                <b>홍익대학교</b>
+                <span>Python Programming 비교과 특강</span>
+                <ul><li>Python 기초 및 심화 프로그래밍</li></ul>
+              </div>
+              <div class="exp">
+                <b>서일대학교</b>
+                <span>Python Programming 비교과 특강</span>
+                <ul><li>Python 기초 및 심화 프로그래밍</li></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-group">
+            <h3>공공기관·민간교육</h3>
+            <div class="exp-grid">
+              <div class="exp">
+                <b>한국생산성본부</b>
+                <span>SW지도강사 / Python 교육</span>
+              </div>
+              <div class="exp">
+                <b>용인시디지털산업진흥원</b>
+                <span>SW교육 및 강사양성과정</span>
+              </div>
+              <div class="exp">
+                <b>강원콘텐츠코리아랩</b>
+                <span>SW·콘텐츠 교육</span>
+              </div>
+              <div class="exp">
+                <b>안랩샘 아카데미</b>
+                <span>SW교육 과정 강의</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-group">
+            <h3>교육과정 개발 및 운영</h3>
+            <div class="exp-grid">
+              <div class="exp">
+                <b>마인드퍼스트코딩랩</b>
+                <span>2018 ~ 현재</span>
+                <ul>
+                  <li>Python·C 교육과정 운영</li>
+                  <li>프로젝트형 수업 설계</li>
+                  <li>생성형 AI·기초 데이터 활용 수업 개발</li>
+                </ul>
+              </div>
+              <div class="exp">
+                <b>교재 및 콘텐츠 개발</b>
+                <span>2017 ~ 현재</span>
+                <ul>
+                  <li>SW·코딩 교육 교재 6종 집필</li>
+                  <li>수업자료 및 실습과제 제작</li>
+                </ul>
+              </div>
+              <div class="exp">
+                <b>학생 프로젝트 지도</b>
+                <span>PBL · GitHub · 발표</span>
+                <ul>
+                  <li>주제 설정·구현·발표 지도</li>
+                  <li>웹 포트폴리오 제작 지원</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="wrap">
+        <p class="section-kicker">Publications</p>
+        <h2>저서 및 교육콘텐츠</h2>
+        <p class="lead">집필활동을 통해 학습자의 이해에 기반한 설명은 물론 성취수준 평가 개발 분야에 10여 년간 연구하고 참여해 왔습니다.</p>
+
+        <div class="grid cols-3">
+          <article class="card pub-card">
+            <h3>한국생산성본부(KPC)</h3>
+            <p><strong>『이기적 SW코딩자격』 수험서 4권</strong></p>
+            <p>스크래치·엔트리 기반 SW코딩자격 대비 교재 집필</p>
+          </article>
+          <article class="card pub-card">
+            <h3>한국정보통신진흥협회(KAIT)</h3>
+            <p><strong>『코딩활용능력시험』 수험서</strong></p>
+            <p>엔트리 2·3급 통합 교재 집필</p>
+          </article>
+          <article class="card pub-card">
+            <h3>영진닷컴 × KAIT</h3>
+            <p><strong>『이기적 파이썬마스터』</strong></p>
+            <p>Python 자격시험 대비 수험서 집필</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum">
+      <div class="wrap">
+        <p class="section-kicker">Curriculum</p>
+        <h2>대표 커리큘럼</h2>
+        <p class="lead">대학 정규교과는 15주, 기관·기업은 시간과 목적에 맞춰 단기 과정으로 재구성할 수 있습니다.</p>
+
+        <article class="curriculum-card">
+          <div class="curriculum-head">
+            <div>
+              <h3>Python Programming</h3>
+              <p>기초 문법을 이해하고 문제해결형 미니 프로젝트를 구현할 수 있다.</p>
+            </div>
+            <span class="badge">15주 정규교과</span>
+          </div>
+          <div class="detail-body">
+            <div class="blocks">
+              <div class="block"><b>1~3주</b><ul><li>개발환경</li><li>변수·자료형</li><li>연산자·문자열</li></ul></div>
+              <div class="block"><b>4~6주</b><ul><li>조건문</li><li>반복문</li><li>리스트</li></ul></div>
+              <div class="block"><b>7~9주</b><ul><li>딕셔너리</li><li>함수</li><li>중간 실습</li></ul></div>
+              <div class="block"><b>10~12주</b><ul><li>파일 입출력</li><li>예외처리</li><li>모듈 활용</li></ul></div>
+              <div class="block"><b>13~15주</b><ul><li>미니 프로젝트</li><li>결과 정리</li><li>최종 발표</li></ul></div>
+            </div>
+            <div class="eval">
+              <div>출석 20%</div>
+              <div>과제 30%</div>
+              <div>필기평가 10%</div>
+              <div>프로젝트 30%</div>
+              <div>발표 10%</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="curriculum-card">
+          <div class="curriculum-head">
+            <div>
+              <h3>기초 데이터 활용</h3>
+              <p>Python과 pandas를 활용해 데이터를 정리·시각화하고 간단한 해석 보고서를 작성할 수 있다.</p>
+            </div>
+            <span class="badge">입문 과정</span>
+          </div>
+          <div class="detail-body">
+            <div class="blocks">
+              <div class="block"><b>1~3주</b><ul><li>CSV 불러오기</li><li>DataFrame 기초</li><li>열·행 확인</li></ul></div>
+              <div class="block"><b>4~6주</b><ul><li>필터링</li><li>결측치</li><li>groupby</li></ul></div>
+              <div class="block"><b>7~9주</b><ul><li>기초 통계</li><li>중간 리포트</li><li>그래프 기초</li></ul></div>
+              <div class="block"><b>10~12주</b><ul><li>공공데이터</li><li>가설 설정</li><li>시각화</li></ul></div>
+              <div class="block"><b>13~15주</b><ul><li>미니 분석</li><li>결과 해석</li><li>발표</li></ul></div>
+            </div>
+            <div class="eval">
+              <div>실습 40%</div>
+              <div>분석보고서 35%</div>
+              <div>발표 25%</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="curriculum-card">
+          <div class="curriculum-head">
+            <div>
+              <h3>생성형 AI 활용 프로젝트</h3>
+              <p>AI를 활용해 코드 이해, 자료 정리, 문서·시각화·웹 결과물 제작을 수행하고 결과를 검증할 수 있다.</p>
+            </div>
+            <span class="badge">교양·비교과·특강</span>
+          </div>
+          <div class="detail-body">
+            <div class="blocks">
+              <div class="block"><b>1~3주</b><ul><li>AI 개요</li><li>활용 윤리</li><li>프롬프트 기초</li></ul></div>
+              <div class="block"><b>4~6주</b><ul><li>코드 설명</li><li>오류 점검</li><li>결과 검증</li></ul></div>
+              <div class="block"><b>7~9주</b><ul><li>자료 요약</li><li>문서 초안</li><li>시각화 보조</li></ul></div>
+              <div class="block"><b>10~12주</b><ul><li>웹 결과물</li><li>GitHub 연결</li><li>포트폴리오 구성</li></ul></div>
+              <div class="block"><b>13~15주</b><ul><li>프로젝트 완성</li><li>발표</li><li>성찰 기록</li></ul></div>
+            </div>
+            <div class="eval">
+              <div>실습 40%</div>
+              <div>결과물 35%</div>
+              <div>발표 25%</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <p class="section-kicker">Background</p>
+        <h2>학력·연구·자격</h2>
+
+        <div class="grid cols-3">
+          <article class="card">
+            <h3>Education</h3>
+            <p><strong>이화여자대학교 정보과학 석사</strong><br />전자상거래학 전공</p>
+            <p><strong>아주대학교 국어국문학과 학사</strong></p>
+          </article>
+
+          <article class="card">
+            <h3>Research</h3>
+            <p><strong>AHP를 통한 인터넷 비즈니스 모델별 주요 수익요인에 관한 탐색적 연구</strong></p>
+            <p>한국경영정보학회, 2006</p>
+            <p><strong>석사학위논문</strong><br />인터넷 수익모델 평가 및 모델별 주요 수익요인에 관한 연구</p>
+            <p>이화여자대학교 경영대학원 정보과학 석사, 2004</p>
+          </article>
+
+          <article class="card">
+            <h3>Certifications</h3>
+            <ul class="cert-list">
+              <li>ICDL Professional Computing (Python)</li>
+              <li>Unity Certified Developer</li>
+              <li>직업상담사 2급</li>
+              <li>진로적성상담사</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap">
+        <p class="section-kicker">Downloads</p>
+        <h2>제출자료 다운로드</h2>
+        <p class="lead">
+          필요한 서류를 다운로드 받아 확인하실 수 있습니다.
+        </p>
+
+        <div class="download">
+          <a href="resume_choi_kyunghee.pdf">PDF 이력서</a>
+          <a href="portfolio_choi_kyunghee.pdf">통합 포트폴리오</a>
+          <a href="syllabus_python.pdf">Python 강의계획서</a>
+          <a href="syllabus_ai.pdf">생성형 AI 활용 강의계획서</a>
+          <a href="syllabus_data.pdf">기초 데이터 활용 강의계획서</a>
+          <a href="https://github.com/greenwave35" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="section-kicker">Contact</p>
+        <h2>강의 및 교육과정 문의</h2>
+
+        <div class="card contact-card">
+          <div class="small-photo">
+            <img src="profile.png" alt="최경희 프로필 사진" />
+          </div>
+
+          <div>
+            <h3>최경희</h3>
+            <p>
+              Python Programming 교육 전문가<br />
+              대학 · 공공기관 · 기업 교육과정 설계 및 강의
+            </p>
+            <div class="contact-links">
+              <a href="mailto:greenwave35@gmail.com">greenwave35@gmail.com</a>
+              <a href="https://github.com/greenwave35" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://greenwave35.github.io/kellychoi_pf/" target="_blank" rel="noopener">Portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 최경희 | Python Programming 교육 전문가 Portfolio</div>
+  </footer>
+</body>
+</html>
